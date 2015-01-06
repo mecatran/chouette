@@ -135,11 +135,12 @@ public class DetailReportItem extends ReportItem
    private String populate(String template)
    {
       String message = template;
-      for (String key : args.keySet())
-      {
-         String value = args.get(key).toString();
-
-         message = expand(message, key, value);
+      if (args != null) {
+         for (String key : args.keySet())
+         {
+            String value = args.get(key).toString();
+            message = expand(message, key, value);
+         }
       }
       message = expand(message, "objectId", getObjectId());
       message = message.replaceAll("''", "'");
