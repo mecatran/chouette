@@ -1,5 +1,78 @@
+# Version 3.3.1 (07/04/2016)
+* Nouvelles fonctionnalités :
+  * export SIG : nouvel export combinant les format KML et GeoJson
+
+# Version 3.3.0 (25/03/2016) 
+* Nouvelles fonctionnalités :
+  * actions de conversion
+  * modularisation pour créer le backoffice de conversion/validation : cvdtc_cv
+  * import GTFS : prise en compte des modes de transport étendus
+* Correction 
+  * Mantis 43096 : Import GTFS, pas de rapport sur les fichiers non traités dans le cas d'une erreur bloquante sur un fichier 
+  * Mantis 43093 : Import GTFS, les fichiers obligatoires absents n'apparaissent pas en erreur dans le rapport d'import
+
+# Version 3.2.1 (26/02/2016) 
+* Corrections :
+  * issue #23 : wrong shape_pt_sequence on GTFS export
+  * issue #24 : memory leak and timeout on transaction on exports
+
+# Version 3.2.0 (05/02/2016) 
+* Nouvelles fonctionnalités
+  * Gestion des courses en fréquences
+  * Gestion des tracés de missions
+
+# Version 3.1.1 (13/11/2015) 
+* Corrections
+  * Validation GTFS n'accepte pas les lang en majuscule (Mantis 40461) 
+  * Validation GTFS erreur sur trip.txt en l'absence de calendar.txt (Mantis 40551)
+  * Export Neptune : erreur si la séquence des arrêts n'est pas continue (position)  (Mantis 40552)
+  * API Rest : blocage temporaire des api sur upload de gros volumes  (Mantis 40553)
+
+# Version 3.1.0 (28/10/15)
+* Nouvelles fonctionnalités
+  * Validation GTFS lors de l'import
+* Améliorations
+  * mise en adéquation de Chouette sur Neptune (hors courses à fréquences)
+  * export GTFS des informations pickup_type et drop_off_type
+
+# Version 3.0.1
+* Correction 
+  * Mantis 38577 : fusion des logs Velocity aux logs IEV
+
+
+# Version 3.0.0 (20/08/15)
+* Nouveaux composants
+  * Implémentation d'une interface webservice REST asynchrone des traitements d'import, export et validation chouette.ear exécutable sous Wildly en remplacement du jar programme chouette-gui-command.
+  * Ajout d'un composant jar autonome pour réaliser des opérations de conversion de format et de validation en ligne de commande
+
+# Version 2.5.3 (non déployée)
+* Nouvelles fonctionnalités
+  * Contrôle de cohérence des communes des arrêts (Mantis 31896)
+  * Ajout de champs dans les échanges Neptune en structurant le champ commentaire (Mantis 31897)
+
+* Corrections d'anomalies
+  * NullPointerException dans la méthode isActiveOn du modèle java Timetable sur un calendrier dans jours d'application (Mantis 33783)
+
+# Version 2.5.2 (21/01/15)
+* Nouvelles fonctionnalités
+  * Tests de validation avant export (Hub)
+  * Metadata à l'export
+
+* Amélioration
+  * Optimisation de jaxb
+  
+* Correction
+  * Détection d'absence de fin de ligne en fin de fichier gtfs (Mantis 30988)
+
+# Version 2.5.1 (09/12/14)
+* Nouvelles fonctionnalités
+  * refonte des échanges GTFS
+
+* Amélioration
+  * Complétude du javadoc pour chouette-model
+
 # Version 2.5.0 (23/10/14)
-* Nouvelles foctionnalités
+* Nouvelles fonctionnalités
   * Import d'arrêts en CSV/Excel (Mantis 26832)
   * Attributs vacances et jours fériés : comme étiquette (Mantis 26835)
   * Gestion de dates exclues dans les calendriers (Mantis 26837)
